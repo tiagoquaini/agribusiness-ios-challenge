@@ -12,7 +12,6 @@
 		2E722C6820B5F690000CDB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6620B5F690000CDB78 /* Main.storyboard */; };
 		2E722C6A20B5F691000CDB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6920B5F691000CDB78 /* Assets.xcassets */; };
 		2E722C6D20B5F691000CDB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6B20B5F691000CDB78 /* LaunchScreen.storyboard */; };
-		2E722C7520B5FD95000CDB78 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C7420B5FD95000CDB78 /* Podfile */; };
 		C2CD8E9087770D844A118250 /* libPods-Agribusiness.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E0D2AE28DDD7A417EBE210 /* libPods-Agribusiness.a */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +24,6 @@
 		2E722C6920B5F691000CDB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E722C6C20B5F691000CDB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E722C6E20B5F691000CDB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E722C7420B5FD95000CDB78 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		851F6CEBEEFE918CB6FA3C59 /* Pods-Agribusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agribusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Agribusiness/Pods-Agribusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		B5E0D2AE28DDD7A417EBE210 /* libPods-Agribusiness.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agribusiness.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,7 +76,6 @@
 				2E722C6920B5F691000CDB78 /* Assets.xcassets */,
 				2E722C6B20B5F691000CDB78 /* LaunchScreen.storyboard */,
 				2E722C6E20B5F691000CDB78 /* Info.plist */,
-				2E722C7420B5FD95000CDB78 /* Podfile */,
 			);
 			path = Agribusiness;
 			sourceTree = "<group>";
@@ -153,7 +150,6 @@
 			files = (
 				2E722C6D20B5F691000CDB78 /* LaunchScreen.storyboard in Resources */,
 				2E722C6A20B5F691000CDB78 /* Assets.xcassets in Resources */,
-				2E722C7520B5FD95000CDB78 /* Podfile in Resources */,
 				2E722C6820B5F690000CDB78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
