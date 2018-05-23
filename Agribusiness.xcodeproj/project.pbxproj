@@ -12,9 +12,12 @@
 		2E722C6820B5F690000CDB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6620B5F690000CDB78 /* Main.storyboard */; };
 		2E722C6A20B5F691000CDB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6920B5F691000CDB78 /* Assets.xcassets */; };
 		2E722C6D20B5F691000CDB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6B20B5F691000CDB78 /* LaunchScreen.storyboard */; };
+		2E722C7520B5FD95000CDB78 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C7420B5FD95000CDB78 /* Podfile */; };
+		C2CD8E9087770D844A118250 /* libPods-Agribusiness.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E0D2AE28DDD7A417EBE210 /* libPods-Agribusiness.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1189E511D0B7D4DA2E144086 /* Pods-Agribusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agribusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-Agribusiness/Pods-Agribusiness.release.xcconfig"; sourceTree = "<group>"; };
 		2E722C5F20B5F690000CDB78 /* Agribusiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agribusiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E722C6220B5F690000CDB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E722C6420B5F690000CDB78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		2E722C6920B5F691000CDB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E722C6C20B5F691000CDB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E722C6E20B5F691000CDB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E722C7420B5FD95000CDB78 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		851F6CEBEEFE918CB6FA3C59 /* Pods-Agribusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agribusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Agribusiness/Pods-Agribusiness.debug.xcconfig"; sourceTree = "<group>"; };
+		B5E0D2AE28DDD7A417EBE210 /* libPods-Agribusiness.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agribusiness.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2CD8E9087770D844A118250 /* libPods-Agribusiness.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02A6C2592D3093D9FDF2967A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				851F6CEBEEFE918CB6FA3C59 /* Pods-Agribusiness.debug.xcconfig */,
+				1189E511D0B7D4DA2E144086 /* Pods-Agribusiness.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2E722C5620B5F690000CDB78 = {
 			isa = PBXGroup;
 			children = (
 				2E722C6120B5F690000CDB78 /* Agribusiness */,
 				2E722C6020B5F690000CDB78 /* Products */,
+				02A6C2592D3093D9FDF2967A /* Pods */,
+				89A09B22CC5C4B0412907421 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +78,17 @@
 				2E722C6920B5F691000CDB78 /* Assets.xcassets */,
 				2E722C6B20B5F691000CDB78 /* LaunchScreen.storyboard */,
 				2E722C6E20B5F691000CDB78 /* Info.plist */,
+				2E722C7420B5FD95000CDB78 /* Podfile */,
 			);
 			path = Agribusiness;
+			sourceTree = "<group>";
+		};
+		89A09B22CC5C4B0412907421 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5E0D2AE28DDD7A417EBE210 /* libPods-Agribusiness.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E722C7120B5F691000CDB78 /* Build configuration list for PBXNativeTarget "Agribusiness" */;
 			buildPhases = (
+				0ED5BF4785BD223C3B67B208 /* [CP] Check Pods Manifest.lock */,
 				2E722C5B20B5F690000CDB78 /* Sources */,
 				2E722C5C20B5F690000CDB78 /* Frameworks */,
 				2E722C5D20B5F690000CDB78 /* Resources */,
+				0BD66A092B110F2106E7E783 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,11 +153,53 @@
 			files = (
 				2E722C6D20B5F691000CDB78 /* LaunchScreen.storyboard in Resources */,
 				2E722C6A20B5F691000CDB78 /* Assets.xcassets in Resources */,
+				2E722C7520B5FD95000CDB78 /* Podfile in Resources */,
 				2E722C6820B5F690000CDB78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BD66A092B110F2106E7E783 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Agribusiness/Pods-Agribusiness-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Agribusiness/Pods-Agribusiness-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0ED5BF4785BD223C3B67B208 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Agribusiness-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E722C5B20B5F690000CDB78 /* Sources */ = {
@@ -278,6 +349,7 @@
 		};
 		2E722C7220B5F691000CDB78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 851F6CEBEEFE918CB6FA3C59 /* Pods-Agribusiness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +368,7 @@
 		};
 		2E722C7320B5F691000CDB78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1189E511D0B7D4DA2E144086 /* Pods-Agribusiness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
