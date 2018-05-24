@@ -26,9 +26,9 @@ class MapController: UIViewController {
         var imageSrc :String
         if !routeDisplayed {
             fetchRoute()
-            showMarkerInAddress(address: "188 Avenida SAP, Sao Leopoldo, RS")
-            showMarkerInAddress(address: "2344 Avenida Presidente Vargas, Esteio, RS")
-            showMarkerInAddress(address: "Arena do Gremio, Porto Alegre, RS")
+            showMarkerInAddress(address: "188 Avenida SAP, Sao Leopoldo, RS", description: "Factory", isFactory: true)
+            showMarkerInAddress(address: "2344 Avenida Presidente Vargas, Esteio, RS", description: "Farm")
+            showMarkerInAddress(address: "Arena do Gremio, Porto Alegre, RS", description: "Farm")
             imageSrc = "stop.png"
         } else {
             mapView.clear()
@@ -40,22 +40,24 @@ class MapController: UIViewController {
         routeDisplayed = !routeDisplayed
     }
     
-    func showMarkerInAddress(address: String, description: String = "Description") {
+    func showMarkerInAddress(address: String, description: String = "Description", isFactory: Bool = false) {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
             guard let placemarks = placemarks, let location = placemarks.first?.location
                 else {
                     return
             }
-            self.showMarker(position: location.coordinate, title: address, description: description)
+            let iconSrc = isFactory ? "factory.png" : "cow.png"
+            self.showMarker(position: location.coordinate, title: address, description: description, iconSrc: iconSrc)
         })
     }
 
-    func showMarker(position: CLLocationCoordinate2D, title: String, description snippet: String ){
+    func showMarker(position: CLLocationCoordinate2D, title: String, description snippet: String, iconSrc icon: String) {
         let marker = GMSMarker()
         marker.position = position
         marker.title = title
         marker.snippet = snippet
+        marker.icon = UIImage(named: icon)
         marker.map = mapView
     }
 
