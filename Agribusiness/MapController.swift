@@ -18,23 +18,24 @@ class MapController: UIViewController {
     let factoryAddress = "188 Avenida SAP, Sao Leopoldo, RS"
     let apiKey = "AIzaSyBVjW1BbO04oUZBRgNqp-hLr314w5LdA-U"
     let directionsUrl = "https://maps.googleapis.com/maps/api/directions/json"
+    let waypoints = ["2344 Avenida Presidente Vargas, Esteio, RS", "Arena do Gremio, Porto Alegre, RS"] // fetch from db after
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let camera = GMSCameraPosition.camera(withLatitude: -29.7965353, longitude: -51.148414, zoom: 10.0)
         mapView.camera = camera
+        showMarkers()
     }
     
     @IBAction func mapRouteBtnPress(_ sender: UIButton) {
         var imageSrc :String
         if !routeDisplayed {
             fetchRoute()
-            showMarkerInAddress(address: "188 Avenida SAP, Sao Leopoldo, RS", description: "Factory", isFactory: true)
-            showMarkerInAddress(address: "2344 Avenida Presidente Vargas, Esteio, RS", description: "Farm")
-            showMarkerInAddress(address: "Arena do Gremio, Porto Alegre, RS", description: "Farm")
+            showMarkers()
             imageSrc = "stop.png"
         } else {
             mapView.clear()
+            showMarkers()
             imageSrc = "replay-icon.png"
         }
         if let image = UIImage(named: imageSrc) {
@@ -43,6 +44,13 @@ class MapController: UIViewController {
         routeDisplayed = !routeDisplayed
     }
     
+    func showMarkers() {
+        showMarkerInAddress(address: "188 Avenida SAP, Sao Leopoldo, RS", description: "Factory", isFactory: true)
+        for point in waypoints {
+            showMarkerInAddress(address: point, description: "Farm")
+        }
+    }
+
     func showMarkerInAddress(address: String, description: String = "Description", isFactory: Bool = false) {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
@@ -65,7 +73,6 @@ class MapController: UIViewController {
     }
 
     func fetchRoute() {
-        let waypoints = ["2344 Avenida Presidente Vargas, Esteio, RS", "Arena do Gremio, Porto Alegre, RS"]
         let url = buildUrl(waypoints: waypoints)
 
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
