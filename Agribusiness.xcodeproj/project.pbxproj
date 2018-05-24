@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E722C6320B5F690000CDB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E722C6220B5F690000CDB78 /* AppDelegate.swift */; };
-		2E722C6520B5F690000CDB78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E722C6420B5F690000CDB78 /* ViewController.swift */; };
+		2E722C6520B5F690000CDB78 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E722C6420B5F690000CDB78 /* MapController.swift */; };
 		2E722C6820B5F690000CDB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6620B5F690000CDB78 /* Main.storyboard */; };
 		2E722C6A20B5F691000CDB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6920B5F691000CDB78 /* Assets.xcassets */; };
 		2E97D3BD20B6F0B300D0A9F6 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E97D3BC20B6F0B300D0A9F6 /* Map.storyboard */; };
@@ -20,7 +20,7 @@
 		1189E511D0B7D4DA2E144086 /* Pods-Agribusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agribusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-Agribusiness/Pods-Agribusiness.release.xcconfig"; sourceTree = "<group>"; };
 		2E722C5F20B5F690000CDB78 /* Agribusiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agribusiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E722C6220B5F690000CDB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E722C6420B5F690000CDB78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E722C6420B5F690000CDB78 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		2E722C6720B5F690000CDB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E722C6920B5F691000CDB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E722C6E20B5F691000CDB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				2E97D3BE20B6F14700D0A9F6 /* Farms.storyboard */,
 				2E97D3BC20B6F0B300D0A9F6 /* Map.storyboard */,
 				2E722C6220B5F690000CDB78 /* AppDelegate.swift */,
-				2E722C6420B5F690000CDB78 /* ViewController.swift */,
+				2E722C6420B5F690000CDB78 /* MapController.swift */,
 				2E722C6620B5F690000CDB78 /* Main.storyboard */,
 				2E722C6920B5F691000CDB78 /* Assets.xcassets */,
 				2E722C6E20B5F691000CDB78 /* Info.plist */,
@@ -204,7 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E722C6520B5F690000CDB78 /* ViewController.swift in Sources */,
+				2E722C6520B5F690000CDB78 /* MapController.swift in Sources */,
 				2E722C6320B5F690000CDB78 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

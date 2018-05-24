@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController {
+class MapController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
 
@@ -31,6 +31,6 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: GMSMapViewDelegate {
+extension MapController: GMSMapViewDelegate {
 
 }
