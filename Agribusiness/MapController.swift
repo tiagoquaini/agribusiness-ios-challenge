@@ -15,6 +15,9 @@ class MapController: UIViewController {
     @IBOutlet weak var mapRouteButton: UIButton!
     
     var routeDisplayed = false
+    let factoryAddress = "188 Avenida SAP, Sao Leopoldo, RS"
+    let apiKey = "AIzaSyBVjW1BbO04oUZBRgNqp-hLr314w5LdA-U"
+    let directionsUrl = "https://maps.googleapis.com/maps/api/directions/json"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,20 +65,8 @@ class MapController: UIViewController {
     }
 
     func fetchRoute() {
-        let origin = "188 Avenida SAP, Sao Leopoldo, RS"
-        let destination = "188 Avenida SAP, Sao Leopoldo, RS"
-        let apiKey = "AIzaSyBVjW1BbO04oUZBRgNqp-hLr314w5LdA-U"
-        let urlString = "https://maps.googleapis.com/maps/api/directions/json"
-
-        let query: [String: String] = [
-            "key": apiKey,
-            "origin": origin,
-            "destination": destination,
-            "waypoints": "2344 Avenida Presidente Vargas, Esteio, RS|Arena do Gremio, Porto Alegre, RS"
-        ]
-
-        let baseURL = URL(string: urlString)!
-        let url = baseURL.withQueries(query)!
+        let waypoints = ["2344 Avenida Presidente Vargas, Esteio, RS", "Arena do Gremio, Porto Alegre, RS"]
+        let url = buildUrl(waypoints: waypoints)
 
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
@@ -106,10 +97,28 @@ class MapController: UIViewController {
         }
         task.resume()
     }
-}
 
-extension MapController: GMSMapViewDelegate {
+    func buildUrl(waypoints: [String]) -> URL {
+        let query: [String: String] = [
+            "key": apiKey,
+            "origin": factoryAddress,
+            "destination": factoryAddress,
+            "waypoints": formatWaypoints(waypoints: waypoints)
+        ]
+        let baseURL = URL(string: directionsUrl)!
+        return baseURL.withQueries(query)!
+    }
 
+    func formatWaypoints(waypoints: [String]) -> String {
+        var formatted: String = ""
+        for point in waypoints {
+            if formatted.count > 0 {
+                formatted += "|"
+            }
+            formatted += point
+        }
+        return formatted
+    }
 }
 
 extension URL {
