@@ -18,10 +18,12 @@ class MapController: UIViewController {
     let factoryAddress = "188 Avenida SAP, Sao Leopoldo, RS"
     let apiKey = "AIzaSyBVjW1BbO04oUZBRgNqp-hLr314w5LdA-U"
     let directionsUrl = "https://maps.googleapis.com/maps/api/directions/json"
+    var farms: [Farm]?
     let waypoints = ["2344 Avenida Presidente Vargas, Esteio, RS", "Arena do Gremio, Porto Alegre, RS"] // fetch from db after
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadFarms()
         let camera = GMSCameraPosition.camera(withLatitude: -29.7965353, longitude: -51.148414, zoom: 10.0)
         mapView.camera = camera
         showMarkers()
@@ -44,10 +46,16 @@ class MapController: UIViewController {
         routeDisplayed = !routeDisplayed
     }
     
+    func loadFarms() {
+        farms = Farm.loadFarms() ?? Farm.loadSampleFarms()
+        mapRouteButton.isEnabled = farms != nil
+    }
+    
     func showMarkers() {
         showMarkerInAddress(address: "188 Avenida SAP, Sao Leopoldo, RS", description: "Factory", isFactory: true)
-        for point in waypoints {
-            showMarkerInAddress(address: point, description: "Farm")
+        guard farms != nil else { return }
+        for farm in farms! {
+            showMarkerInAddress(address: farm.address, description: farm.name)
         }
     }
 
@@ -73,7 +81,7 @@ class MapController: UIViewController {
     }
 
     func fetchRoute() {
-        let url = buildUrl(waypoints: waypoints)
+        let url = buildUrl()
 
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
@@ -105,24 +113,24 @@ class MapController: UIViewController {
         task.resume()
     }
 
-    func buildUrl(waypoints: [String]) -> URL {
+    func buildUrl() -> URL {
         let query: [String: String] = [
             "key": apiKey,
             "origin": factoryAddress,
             "destination": factoryAddress,
-            "waypoints": formatWaypoints(waypoints: waypoints)
+            "waypoints": formatWaypoints(farms: farms!)
         ]
         let baseURL = URL(string: directionsUrl)!
         return baseURL.withQueries(query)!
     }
 
-    func formatWaypoints(waypoints: [String]) -> String {
+    func formatWaypoints(farms: [Farm]) -> String {
         var formatted: String = ""
-        for point in waypoints {
+        for farm in farms {
             if formatted.count > 0 {
                 formatted += "|"
             }
-            formatted += point
+            formatted += farm.address
         }
         return formatted
     }
