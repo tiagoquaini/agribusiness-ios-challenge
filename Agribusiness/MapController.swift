@@ -18,15 +18,29 @@ class MapController: UIViewController {
         let camera = GMSCameraPosition.camera(withLatitude: 37.36, longitude: -122.0, zoom: 10.0)
         mapView.camera = camera
         mapView.settings.myLocationButton = true
-        showMarker(position: camera.target)
         fetchRoute()
+        showMarkerInAddress(address: "Mountain View, CA")
+        showMarkerInAddress(address: "Loyola, CA")
+        showMarkerInAddress(address: "Cupertino, CA")
+        showMarkerInAddress(address: "Sunnyvale, CA")
     }
 
-    func showMarker(position: CLLocationCoordinate2D){
+    func showMarkerInAddress(address: String, description: String = "Description") {
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
+            guard let placemarks = placemarks, let location = placemarks.first?.location
+                else {
+                    return
+            }
+            self.showMarker(position: location.coordinate, title: address, description: description)
+        })
+    }
+
+    func showMarker(position: CLLocationCoordinate2D, title: String, description snippet: String ){
         let marker = GMSMarker()
         marker.position = position
-        marker.title = "Palo Alto"
-        marker.snippet = "San Francisco"
+        marker.title = title
+        marker.snippet = snippet
         marker.map = mapView
     }
 
