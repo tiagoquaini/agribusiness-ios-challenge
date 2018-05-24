@@ -17,7 +17,6 @@ class MapController: UIViewController {
         super.viewDidLoad()
         let camera = GMSCameraPosition.camera(withLatitude: 37.36, longitude: -122.0, zoom: 10.0)
         mapView.camera = camera
-        mapView.settings.myLocationButton = true
         fetchRoute()
         showMarkerInAddress(address: "Mountain View, CA")
         showMarkerInAddress(address: "Loyola, CA")
