@@ -11,7 +11,6 @@
 		2E722C6520B5F690000CDB78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E722C6420B5F690000CDB78 /* ViewController.swift */; };
 		2E722C6820B5F690000CDB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6620B5F690000CDB78 /* Main.storyboard */; };
 		2E722C6A20B5F691000CDB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6920B5F691000CDB78 /* Assets.xcassets */; };
-		2E722C6D20B5F691000CDB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6B20B5F691000CDB78 /* LaunchScreen.storyboard */; };
 		C2CD8E9087770D844A118250 /* libPods-Agribusiness.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E0D2AE28DDD7A417EBE210 /* libPods-Agribusiness.a */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +21,6 @@
 		2E722C6420B5F690000CDB78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E722C6720B5F690000CDB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E722C6920B5F691000CDB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2E722C6C20B5F691000CDB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E722C6E20B5F691000CDB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		851F6CEBEEFE918CB6FA3C59 /* Pods-Agribusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agribusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Agribusiness/Pods-Agribusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		B5E0D2AE28DDD7A417EBE210 /* libPods-Agribusiness.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agribusiness.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +72,6 @@
 				2E722C6420B5F690000CDB78 /* ViewController.swift */,
 				2E722C6620B5F690000CDB78 /* Main.storyboard */,
 				2E722C6920B5F691000CDB78 /* Assets.xcassets */,
-				2E722C6B20B5F691000CDB78 /* LaunchScreen.storyboard */,
 				2E722C6E20B5F691000CDB78 /* Info.plist */,
 			);
 			path = Agribusiness;
@@ -148,7 +145,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E722C6D20B5F691000CDB78 /* LaunchScreen.storyboard in Resources */,
 				2E722C6A20B5F691000CDB78 /* Assets.xcassets in Resources */,
 				2E722C6820B5F690000CDB78 /* Main.storyboard in Resources */,
 			);
@@ -165,12 +161,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Agribusiness/Pods-Agribusiness-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -216,14 +210,6 @@
 				2E722C6720B5F690000CDB78 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2E722C6B20B5F691000CDB78 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2E722C6C20B5F691000CDB78 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -349,7 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M54MQ78CNB;
+				DEVELOPMENT_TEAM = GXTTXBDF5A;
 				INFOPLIST_FILE = Agribusiness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -368,7 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M54MQ78CNB;
+				DEVELOPMENT_TEAM = GXTTXBDF5A;
 				INFOPLIST_FILE = Agribusiness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
