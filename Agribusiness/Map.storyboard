@@ -29,6 +29,9 @@
                                     <constraint firstAttribute="height" constant="75" id="wrK-b0-2Rb"/>
                                 </constraints>
                                 <state key="normal" image="replay-icon"/>
+                                <connections>
+                                    <action selector="mapRouteBtnPress:" destination="KDO-P4-QeL" eventType="touchUpInside" id="H9O-rW-NfR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,6 +49,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="uH8-7b-sLh"/>
                     <connections>
+                        <outlet property="mapRouteButton" destination="qfp-WA-krU" id="K4A-kG-jVQ"/>
                         <outlet property="mapView" destination="9rr-0W-VIZ" id="fJe-F8-Jqd"/>
                     </connections>
                 </viewController>

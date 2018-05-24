@@ -12,18 +12,35 @@ import GoogleMaps
 class MapController: UIViewController {
 
     @IBOutlet fileprivate weak var mapView: GMSMapView!
-
+    @IBOutlet weak var mapRouteButton: UIButton!
+    
+    var routeDisplayed = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let camera = GMSCameraPosition.camera(withLatitude: 37.36, longitude: -122.0, zoom: 10.0)
         mapView.camera = camera
-        fetchRoute()
-        showMarkerInAddress(address: "Mountain View, CA")
-        showMarkerInAddress(address: "Loyola, CA")
-        showMarkerInAddress(address: "Cupertino, CA")
-        showMarkerInAddress(address: "Sunnyvale, CA")
     }
-
+    
+    @IBAction func mapRouteBtnPress(_ sender: UIButton) {
+        var imageSrc :String
+        if !routeDisplayed {
+            fetchRoute()
+            showMarkerInAddress(address: "Mountain View, CA")
+            showMarkerInAddress(address: "Loyola, CA")
+            showMarkerInAddress(address: "Cupertino, CA")
+            showMarkerInAddress(address: "Sunnyvale, CA")
+            imageSrc = "stop.png"
+        } else {
+            mapView.clear()
+            imageSrc = "replay-icon.png"
+        }
+        if let image = UIImage(named: imageSrc) {
+            mapRouteButton.setImage(image, for: .normal)
+        }
+        routeDisplayed = !routeDisplayed
+    }
+    
     func showMarkerInAddress(address: String, description: String = "Description") {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
