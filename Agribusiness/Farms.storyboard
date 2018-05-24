@@ -69,6 +69,10 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                    <connections>
+                                                        <action selector="returnPressed:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="3JN-mr-lRg"/>
+                                                        <action selector="textChanged:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="kSe-En-XR2"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -94,6 +98,10 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" textContentType="location"/>
+                                                    <connections>
+                                                        <action selector="returnPressed:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="cyD-CG-Fo6"/>
+                                                        <action selector="textChanged:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="fR1-en-qh6"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -119,6 +127,10 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="returnPressed:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="s3C-Z4-175"/>
+                                                        <action selector="textChanged:" destination="xWI-4F-Zft" eventType="editingChanged" id="TFp-Sb-95w"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -140,13 +152,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzj-AA-zNh">
-                                                    <rect key="frame" x="84" y="15" width="38" height="20.5"/>
+                                                    <rect key="frame" x="84" y="15.000000000000002" width="38" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJx-sZ-h1s">
-                                                    <rect key="frame" x="494" y="15" width="42" height="20.5"/>
+                                                    <rect key="frame" x="308" y="15.000000000000002" width="42" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -157,6 +169,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="548877036.25369799">
                                                         <!--2018-05-24 17:50:36 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="startDatePickerChanged:" destination="xWI-4F-Zft" eventType="primaryActionTriggered" id="nHC-vA-EUh"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -175,13 +190,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQE-ms-Ncs">
-                                                    <rect key="frame" x="84" y="15" width="29.5" height="20.5"/>
+                                                    <rect key="frame" x="84" y="15.000000000000002" width="29.666666666666671" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUl-0g-sYk">
-                                                    <rect key="frame" x="494" y="15" width="42" height="20.5"/>
+                                                    <rect key="frame" x="308" y="15.000000000000002" width="42" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -192,6 +207,9 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="548877434.63963401">
                                                         <!--2018-05-24 17:57:14 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="endDatePickerChanged:" destination="xWI-4F-Zft" eventType="primaryActionTriggered" id="W26-FR-hLa"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -213,7 +231,7 @@
                     <navigationItem key="navigationItem" title="New Farm" id="aU6-Ue-f8a">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ggM-sS-B8m">
                             <connections>
-                                <segue destination="rBj-Xj-4lP" kind="unwind" unwindAction="unwindToToDoListWithSegue:" id="Xff-zr-FYH"/>
+                                <segue destination="rBj-Xj-4lP" kind="unwind" unwindAction="unwindToFarmListWithSegue:" id="44R-81-NvZ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="Oha-RD-dgk">
@@ -224,10 +242,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="TZj-6F-TyU" id="N3R-VQ-dwG"/>
+                        <outlet property="endDateLabel" destination="FUl-0g-sYk" id="6AY-pe-ueB"/>
                         <outlet property="endDatePicker" destination="ZLu-md-UKa" id="nDG-KT-DMs"/>
                         <outlet property="milkBarrelsTextField" destination="cVj-dM-TIe" id="Ohp-mA-Gwi"/>
                         <outlet property="nameTextField" destination="3sy-5C-jCR" id="58V-DD-p0E"/>
                         <outlet property="saveButton" destination="Oha-RD-dgk" id="m9b-yY-Ad8"/>
+                        <outlet property="startDateLabel" destination="CJx-sZ-h1s" id="uCv-3d-DAT"/>
                         <outlet property="startDatePicker" destination="B9P-XI-9Tf" id="hk0-PW-sa5"/>
                     </connections>
                 </tableViewController>

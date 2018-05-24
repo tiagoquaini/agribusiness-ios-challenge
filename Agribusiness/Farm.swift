@@ -25,15 +25,20 @@ struct Farm: Codable{
     }
     
     static func loadSampleFarms() -> [Farm] {
-        let farm1 = Farm(name: "Farm One", address: "Address Farm One", milkBarrels: 1000,
+        let farm1 = Farm(name: "Farm Portão", address: "Avenida Brasília, Portão, RS", milkBarrels: 200,
                          startTime: Date(), endTime: Date())
-        let farm2 = Farm(name: "Farm Two", address: "Address Farm Two", milkBarrels: 5000,
-                         startTime: Date(), endTime: Date())
-        let farm3 = Farm(name: "Farm Three", address: "Address Farm Three", milkBarrels: 6000,
+        let farm2 = Farm(name: "Farm Tigrão", address: "48 Rua Anchieta, Sapucaia do Sul, RS", milkBarrels: 100,
                          startTime: Date(), endTime: Date())
         
-        return [farm1, farm2, farm3]
+        return [farm1, farm2]
     }
+    
+    static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        return formatter
+    }()
     
     static func saveFarms(_ farmList: [Farm]) {
         let propertyListEncoder = PropertyListEncoder()

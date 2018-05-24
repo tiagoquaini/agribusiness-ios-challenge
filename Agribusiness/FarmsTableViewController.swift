@@ -12,8 +12,7 @@ class FarmsTableViewController : UITableViewController {
     
     var farms : [Farm] = []
     
-    @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
-        
+    @IBAction func unwindToFarmList(segue: UIStoryboardSegue) {
     }
     
     override func viewDidLoad() {
@@ -24,6 +23,8 @@ class FarmsTableViewController : UITableViewController {
         } else {
             farms = Farm.loadSampleFarms()
         }
+        
+        Farm.saveFarms(farms)
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
@@ -48,6 +49,7 @@ class FarmsTableViewController : UITableViewController {
         if editingStyle == .delete {
             farms.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            Farm.saveFarms(farms)
         }
     }
 }
