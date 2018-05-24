@@ -6,57 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="gKK-p4-sX7">
-            <objects>
-                <viewController id="Q5P-rl-KOS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wuy-zs-UFj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ck3-jl-RAm"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="7VA-mR-1Ro"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0zw-Jv-hwl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-217" y="453"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="4fj-Cy-O0y">
-            <objects>
-                <viewController id="KDO-P4-QeL" customClass="ViewController" customModule="Agribusiness" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xWN-PR-ao5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rr-0W-VIZ" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="9rr-0W-VIZ" firstAttribute="leading" secondItem="OyH-K5-rMi" secondAttribute="leading" id="0WH-zp-Ktb"/>
-                            <constraint firstItem="9rr-0W-VIZ" firstAttribute="top" secondItem="OyH-K5-rMi" secondAttribute="top" id="8sq-o5-Cbe"/>
-                            <constraint firstItem="9rr-0W-VIZ" firstAttribute="trailing" secondItem="OyH-K5-rMi" secondAttribute="trailing" id="brj-OV-mEk"/>
-                            <constraint firstItem="9rr-0W-VIZ" firstAttribute="bottom" secondItem="OyH-K5-rMi" secondAttribute="bottom" id="tch-JA-AZV"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="OyH-K5-rMi"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="uH8-7b-sLh"/>
-                    <connections>
-                        <outlet property="mapView" destination="9rr-0W-VIZ" id="fJe-F8-Jqd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4X0-xf-YO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-218.40000000000001" y="-213.64317841079463"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="m5O-bw-muQ">
             <objects>
@@ -67,13 +19,33 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="KDO-P4-QeL" kind="relationship" relationship="viewControllers" id="OkQ-fj-XHo"/>
-                        <segue destination="Q5P-rl-KOS" kind="relationship" relationship="viewControllers" id="hxB-If-lk0"/>
+                        <segue destination="UaD-oL-XD4" kind="relationship" relationship="viewControllers" id="OkQ-fj-XHo"/>
+                        <segue destination="rsB-vv-tsd" kind="relationship" relationship="viewControllers" id="hxB-If-lk0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muP-tw-QIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1168" y="118"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="YV2-nH-RGF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" id="UaD-oL-XD4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Qkg-Wo-Ro1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y42-9p-HE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-179" y="-170"/>
+        </scene>
+        <!--Farms-->
+        <scene sceneID="JFp-bb-eHp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Farms" id="rsB-vv-tsd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="0Fd-lV-8vv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXF-mf-NEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-179" y="354"/>
         </scene>
     </scenes>
 </document>
