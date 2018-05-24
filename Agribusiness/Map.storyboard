@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
+        <!--Map-->
         <scene sceneID="4fj-Cy-O0y">
             <objects>
                 <viewController id="KDO-P4-QeL" customClass="MapController" customModule="Agribusiness" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,7 +47,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OyH-K5-rMi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="uH8-7b-sLh"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="uH8-7b-sLh"/>
                     <connections>
                         <outlet property="mapRouteButton" destination="qfp-WA-krU" id="K4A-kG-jVQ"/>
                         <outlet property="mapView" destination="9rr-0W-VIZ" id="fJe-F8-Jqd"/>

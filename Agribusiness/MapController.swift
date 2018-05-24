@@ -19,10 +19,9 @@ class MapController: UIViewController {
     let apiKey = "AIzaSyBVjW1BbO04oUZBRgNqp-hLr314w5LdA-U"
     let directionsUrl = "https://maps.googleapis.com/maps/api/directions/json"
     var farms: [Farm]?
-    let waypoints = ["2344 Avenida Presidente Vargas, Esteio, RS", "Arena do Gremio, Porto Alegre, RS"] // fetch from db after
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadFarms()
         let camera = GMSCameraPosition.camera(withLatitude: -29.7965353, longitude: -51.148414, zoom: 10.0)
         mapView.camera = camera
