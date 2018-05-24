@@ -73,22 +73,22 @@ class MapController: UIViewController {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options:.allowFragments) as! [String : AnyObject]
                     let routes = json["routes"] as! NSArray
+                    guard routes.count > 0 else { return }
+                    let route = routes[0]
 
                     DispatchQueue.main.async {
                         self.mapView.clear()
 
-                        for route in routes {
-                            let routeOverviewPolyline:NSDictionary = (route as! NSDictionary).value(forKey: "overview_polyline") as! NSDictionary
-                            let points = routeOverviewPolyline.object(forKey: "points")
-                            let path = GMSPath.init(fromEncodedPath: points! as! String)
-                            let polyline = GMSPolyline.init(path: path)
-                            polyline.strokeWidth = 3
+                        let routeOverviewPolyline:NSDictionary = (route as! NSDictionary).value(forKey: "overview_polyline") as! NSDictionary
+                        let points = routeOverviewPolyline.object(forKey: "points")
+                        let path = GMSPath.init(fromEncodedPath: points! as! String)
+                        let polyline = GMSPolyline.init(path: path)
+                        polyline.strokeWidth = 3
 
-                            let bounds = GMSCoordinateBounds(path: path!)
-                            self.mapView!.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 30.0))
+                        let bounds = GMSCoordinateBounds(path: path!)
+                        self.mapView!.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 30.0))
 
-                            polyline.map = self.mapView
-                        }
+                        polyline.map = self.mapView
                     }
                 } catch let error as Error{
                     print("error:\(error)")
