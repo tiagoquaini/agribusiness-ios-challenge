@@ -18,7 +18,7 @@ class MapController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let camera = GMSCameraPosition.camera(withLatitude: 37.36, longitude: -122.0, zoom: 10.0)
+        let camera = GMSCameraPosition.camera(withLatitude: -29.7965353, longitude: -51.148414, zoom: 10.0)
         mapView.camera = camera
     }
     
@@ -26,10 +26,9 @@ class MapController: UIViewController {
         var imageSrc :String
         if !routeDisplayed {
             fetchRoute()
-            showMarkerInAddress(address: "Mountain View, CA")
-            showMarkerInAddress(address: "Loyola, CA")
-            showMarkerInAddress(address: "Cupertino, CA")
-            showMarkerInAddress(address: "Sunnyvale, CA")
+            showMarkerInAddress(address: "188 Avenida SAP, Sao Leopoldo, RS")
+            showMarkerInAddress(address: "2344 Avenida Presidente Vargas, Esteio, RS")
+            showMarkerInAddress(address: "Arena do Gremio, Porto Alegre, RS")
             imageSrc = "stop.png"
         } else {
             mapView.clear()
@@ -61,8 +60,8 @@ class MapController: UIViewController {
     }
 
     func fetchRoute() {
-        let origin = "Mountain View,CA"
-        let destination = "Mountain View,CA"
+        let origin = "188 Avenida SAP, Sao Leopoldo, RS"
+        let destination = "188 Avenida SAP, Sao Leopoldo, RS"
         let apiKey = "AIzaSyBVjW1BbO04oUZBRgNqp-hLr314w5LdA-U"
         let urlString = "https://maps.googleapis.com/maps/api/directions/json"
 
@@ -70,7 +69,7 @@ class MapController: UIViewController {
             "key": apiKey,
             "origin": origin,
             "destination": destination,
-            "waypoints": "Loyola,CA|Cupertino,CA|Sunnyvale,CA"
+            "waypoints": "2344 Avenida Presidente Vargas, Esteio, RS|Arena do Gremio, Porto Alegre, RS"
         ]
 
         let baseURL = URL(string: urlString)!
