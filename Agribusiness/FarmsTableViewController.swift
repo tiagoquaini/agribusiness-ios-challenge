@@ -67,4 +67,13 @@ class FarmsTableViewController : UITableViewController {
             Farm.saveFarms(farms)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            let farmViewController = segue.destination as! FarmViewController
+            let indexPath = tableView.indexPathForSelectedRow!
+            let selectedFarm = farms[indexPath.row]
+            farmViewController.farm = selectedFarm
+        }
+    }
 }

@@ -26,7 +26,6 @@ class FarmViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateSaveButtonState()
         initDatePickers()
         
         if let farm = farm {
@@ -43,6 +42,7 @@ class FarmViewController : UITableViewController {
         
         updateStartDateLabel(date: startDatePicker.date)
         updateEndDateLabel(date: endDatePicker.date)
+        updateSaveButtonState()
     }
     
     func initDatePickers() {

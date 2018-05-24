@@ -26,6 +26,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xWI-4F-Zft" kind="show" identifier="showDetails" id="YB7-in-8xK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -254,7 +257,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6e-cr-cbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="rBj-Xj-4lP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3679.7101449275365" y="452.44565217391306"/>
+            <point key="canvasLocation" x="3639" y="453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="atY-yU-YaR">
@@ -270,7 +273,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYE-14-6lV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2588" y="453"/>
+            <point key="canvasLocation" x="2628" y="128"/>
         </scene>
         <!--Farms-->
         <scene sceneID="l9W-Qo-CTJ">
@@ -291,4 +294,7 @@
             <point key="canvasLocation" x="343" y="453"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YB7-in-8xK"/>
+    </inferredMetricsTieBreakers>
 </document>
