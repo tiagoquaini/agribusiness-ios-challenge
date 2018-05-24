@@ -11,7 +11,7 @@ import Foundation
 struct Farm: Codable{
     var name: String
     var address: String
-    var milkBarrels: Int
+    var milkBarrels: String
     var startTime: Date
     var endTime: Date
     
@@ -25,9 +25,9 @@ struct Farm: Codable{
     }
     
     static func loadSampleFarms() -> [Farm] {
-        let farm1 = Farm(name: "Farm Portão", address: "Avenida Brasília, Portão, RS", milkBarrels: 200,
+        let farm1 = Farm(name: "Farm Portão", address: "Avenida Brasília, Portão, RS", milkBarrels: "200",
                          startTime: Date(), endTime: Date())
-        let farm2 = Farm(name: "Farm Tigrão", address: "48 Rua Anchieta, Sapucaia do Sul, RS", milkBarrels: 100,
+        let farm2 = Farm(name: "Farm Tigrão", address: "48 Rua Anchieta, Sapucaia do Sul, RS", milkBarrels: "100",
                          startTime: Date(), endTime: Date())
         
         return [farm1, farm2]

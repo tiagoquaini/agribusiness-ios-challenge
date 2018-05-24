@@ -231,12 +231,12 @@
                     <navigationItem key="navigationItem" title="New Farm" id="aU6-Ue-f8a">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="ggM-sS-B8m">
                             <connections>
-                                <segue destination="rBj-Xj-4lP" kind="unwind" unwindAction="unwindToFarmListWithSegue:" id="44R-81-NvZ"/>
+                                <segue destination="rBj-Xj-4lP" kind="unwind" unwindAction="unwindToFarmListWithSegue:" id="KZb-fx-QHs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="Oha-RD-dgk">
                             <connections>
-                                <segue destination="rBj-Xj-4lP" kind="unwind" unwindAction="unwindToToDoListWithSegue:" id="tOs-ca-98C"/>
+                                <segue destination="rBj-Xj-4lP" kind="unwind" identifier="saveUnwind" unwindAction="unwindToFarmListWithSegue:" id="pBj-NU-sbt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

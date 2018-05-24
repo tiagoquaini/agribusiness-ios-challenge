@@ -13,6 +13,21 @@ class FarmsTableViewController : UITableViewController {
     var farms : [Farm] = []
     
     @IBAction func unwindToFarmList(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind" else { return }
+        
+        let sourceViewController = segue.source as! FarmViewController
+        
+        if let farm = sourceViewController.farm {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                farms[selectedIndexPath.row] = farm
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                let newIndexPath = IndexPath(row: farms.count, section: 0)
+                farms.append(farm)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
+        Farm.saveFarms(farms)
     }
     
     override func viewDidLoad() {

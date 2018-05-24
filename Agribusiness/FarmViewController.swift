@@ -110,6 +110,20 @@ class FarmViewController : UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        guard segue.identifier == "saveUnwind" else { return }
+        
+        let name = nameTextField.text!
+        let address = addressTextField.text!
+        let milkBarrels = milkBarrelsTextField.text!
+        let startTime = startDatePicker.date
+        let endTime = endDatePicker.date
+        
+        farm = Farm(name: name, address: address, milkBarrels: milkBarrels, startTime: startTime, endTime: endTime)
+    }
+    
     func updateSaveButtonState() {
         let text = nameTextField.text ?? ""
         let address = addressTextField.text ?? ""
