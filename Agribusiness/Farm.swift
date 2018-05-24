@@ -8,15 +8,20 @@
 
 import Foundation
 
-struct Farm {
+struct Farm: Codable{
     var name: String
     var address: String
     var milkBarrels: Int
     var startTime: Date
     var endTime: Date
     
+    static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("Farms").appendingPathExtension("plist")
+    
     static func loadFarms() -> [Farm]?  {
-        return nil
+        guard let codedFarms = try? Data(contentsOf: ArchiveURL) else {return nil}
+        let propertyListDecoder = PropertyListDecoder()
+        return try? propertyListDecoder.decode(Array<Farm>.self, from: codedFarms)
     }
     
     static func loadSampleFarms() -> [Farm] {
@@ -28,5 +33,11 @@ struct Farm {
                          startTime: Date(), endTime: Date())
         
         return [farm1, farm2, farm3]
+    }
+    
+    static func saveFarms(_ farmList: [Farm]) {
+        let propertyListEncoder = PropertyListEncoder()
+        let codedFarms = try? propertyListEncoder.encode(farmList)
+        try? codedFarms?.write(to: ArchiveURL, options: .noFileProtection)
     }
 }
