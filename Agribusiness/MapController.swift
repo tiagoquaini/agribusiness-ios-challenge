@@ -31,15 +31,16 @@ class MapController: UIViewController {
     }
 
     func fetchRoute() {
-        let origin = "Mountain View"
-        let destination = "San Jose"
+        let origin = "Mountain View,CA"
+        let destination = "Mountain View,CA"
         let apiKey = "AIzaSyBVjW1BbO04oUZBRgNqp-hLr314w5LdA-U"
         let urlString = "https://maps.googleapis.com/maps/api/directions/json"
 
         let query: [String: String] = [
             "key": apiKey,
             "origin": origin,
-            "destination": destination
+            "destination": destination,
+            "waypoints": "Loyola,CA|Cupertino,CA|Sunnyvale,CA"
         ]
 
         let baseURL = URL(string: urlString)!
@@ -47,8 +48,6 @@ class MapController: UIViewController {
 
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
-                print("oss")
-                print(data)
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options:.allowFragments) as! [String : AnyObject]
                     let routes = json["routes"] as! NSArray
