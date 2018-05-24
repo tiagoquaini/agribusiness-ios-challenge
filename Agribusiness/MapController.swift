@@ -12,34 +12,66 @@ import GoogleMaps
 class MapController: UIViewController {
 
     @IBOutlet fileprivate weak var mapView: GMSMapView!
-
+    @IBOutlet weak var mapRouteButton: UIButton!
+    
+    var routeDisplayed = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let camera = GMSCameraPosition.camera(withLatitude: 37.36, longitude: -122.0, zoom: 10.0)
+        let camera = GMSCameraPosition.camera(withLatitude: -29.7965353, longitude: -51.148414, zoom: 10.0)
         mapView.camera = camera
-        mapView.settings.myLocationButton = true
-        showMarker(position: camera.target)
-        fetchRoute()
+    }
+    
+    @IBAction func mapRouteBtnPress(_ sender: UIButton) {
+        var imageSrc :String
+        if !routeDisplayed {
+            fetchRoute()
+            showMarkerInAddress(address: "188 Avenida SAP, Sao Leopoldo, RS", description: "Factory", isFactory: true)
+            showMarkerInAddress(address: "2344 Avenida Presidente Vargas, Esteio, RS", description: "Farm")
+            showMarkerInAddress(address: "Arena do Gremio, Porto Alegre, RS", description: "Farm")
+            imageSrc = "stop.png"
+        } else {
+            mapView.clear()
+            imageSrc = "replay-icon.png"
+        }
+        if let image = UIImage(named: imageSrc) {
+            mapRouteButton.setImage(image, for: .normal)
+        }
+        routeDisplayed = !routeDisplayed
+    }
+    
+    func showMarkerInAddress(address: String, description: String = "Description", isFactory: Bool = false) {
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
+            guard let placemarks = placemarks, let location = placemarks.first?.location
+                else {
+                    return
+            }
+            let iconSrc = isFactory ? "factory.png" : "cow.png"
+            self.showMarker(position: location.coordinate, title: address, description: description, iconSrc: iconSrc)
+        })
     }
 
-    func showMarker(position: CLLocationCoordinate2D){
+    func showMarker(position: CLLocationCoordinate2D, title: String, description snippet: String, iconSrc icon: String) {
         let marker = GMSMarker()
         marker.position = position
-        marker.title = "Palo Alto"
-        marker.snippet = "San Francisco"
+        marker.title = title
+        marker.snippet = snippet
+        marker.icon = UIImage(named: icon)
         marker.map = mapView
     }
 
     func fetchRoute() {
-        let origin = "Mountain View"
-        let destination = "San Jose"
+        let origin = "188 Avenida SAP, Sao Leopoldo, RS"
+        let destination = "188 Avenida SAP, Sao Leopoldo, RS"
         let apiKey = "AIzaSyBVjW1BbO04oUZBRgNqp-hLr314w5LdA-U"
         let urlString = "https://maps.googleapis.com/maps/api/directions/json"
 
         let query: [String: String] = [
             "key": apiKey,
             "origin": origin,
-            "destination": destination
+            "destination": destination,
+            "waypoints": "2344 Avenida Presidente Vargas, Esteio, RS|Arena do Gremio, Porto Alegre, RS"
         ]
 
         let baseURL = URL(string: urlString)!
@@ -47,8 +79,6 @@ class MapController: UIViewController {
 
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let data = data {
-                print("oss")
-                print(data)
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options:.allowFragments) as! [String : AnyObject]
                     let routes = json["routes"] as! NSArray

@@ -22,11 +22,26 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfp-WA-krU">
+                                <rect key="frame" x="284" y="576" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="7CZ-y0-T8I"/>
+                                    <constraint firstAttribute="height" constant="75" id="wrK-b0-2Rb"/>
+                                </constraints>
+                                <state key="normal" image="replay-icon"/>
+                                <connections>
+                                    <action selector="mapRouteBtnPress:" destination="KDO-P4-QeL" eventType="touchUpInside" id="H9O-rW-NfR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9rr-0W-VIZ" firstAttribute="leading" secondItem="OyH-K5-rMi" secondAttribute="leading" id="0WH-zp-Ktb"/>
                             <constraint firstItem="9rr-0W-VIZ" firstAttribute="top" secondItem="OyH-K5-rMi" secondAttribute="top" id="8sq-o5-Cbe"/>
+                            <constraint firstItem="OyH-K5-rMi" firstAttribute="bottom" secondItem="qfp-WA-krU" secondAttribute="bottom" constant="8" id="ECS-bX-Qr1"/>
+                            <constraint firstItem="OyH-K5-rMi" firstAttribute="bottom" secondItem="qfp-WA-krU" secondAttribute="bottom" constant="16" id="ECb-kg-kU5"/>
+                            <constraint firstItem="OyH-K5-rMi" firstAttribute="trailing" secondItem="qfp-WA-krU" secondAttribute="trailing" constant="8" id="OSU-Jj-4rE"/>
+                            <constraint firstItem="OyH-K5-rMi" firstAttribute="trailing" secondItem="qfp-WA-krU" secondAttribute="trailing" constant="16" id="Sl2-FG-GRF"/>
                             <constraint firstItem="9rr-0W-VIZ" firstAttribute="trailing" secondItem="OyH-K5-rMi" secondAttribute="trailing" id="brj-OV-mEk"/>
                             <constraint firstItem="9rr-0W-VIZ" firstAttribute="bottom" secondItem="OyH-K5-rMi" secondAttribute="bottom" id="tch-JA-AZV"/>
                         </constraints>
@@ -34,6 +49,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="uH8-7b-sLh"/>
                     <connections>
+                        <outlet property="mapRouteButton" destination="qfp-WA-krU" id="K4A-kG-jVQ"/>
                         <outlet property="mapView" destination="9rr-0W-VIZ" id="fJe-F8-Jqd"/>
                     </connections>
                 </viewController>
@@ -42,4 +58,7 @@
             <point key="canvasLocation" x="-218.40000000000001" y="-213.64317841079463"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="replay-icon" width="300" height="303"/>
+    </resources>
 </document>
