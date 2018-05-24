@@ -13,6 +13,9 @@
 		2E722C6A20B5F691000CDB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E722C6920B5F691000CDB78 /* Assets.xcassets */; };
 		2E97D3BD20B6F0B300D0A9F6 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E97D3BC20B6F0B300D0A9F6 /* Map.storyboard */; };
 		2E97D3BF20B6F14700D0A9F6 /* Farms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E97D3BE20B6F14700D0A9F6 /* Farms.storyboard */; };
+		2EF31CD220B7431500514945 /* FarmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31CCF20B7431400514945 /* FarmsTableViewController.swift */; };
+		2EF31CD320B7431500514945 /* Farm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31CD020B7431400514945 /* Farm.swift */; };
+		2EF31CD420B7431500514945 /* FarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF31CD120B7431400514945 /* FarmViewController.swift */; };
 		C2CD8E9087770D844A118250 /* libPods-Agribusiness.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E0D2AE28DDD7A417EBE210 /* libPods-Agribusiness.a */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +29,9 @@
 		2E722C6E20B5F691000CDB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E97D3BC20B6F0B300D0A9F6 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		2E97D3BE20B6F14700D0A9F6 /* Farms.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Farms.storyboard; sourceTree = "<group>"; };
+		2EF31CCF20B7431400514945 /* FarmsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarmsTableViewController.swift; sourceTree = "<group>"; };
+		2EF31CD020B7431400514945 /* Farm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Farm.swift; sourceTree = "<group>"; };
+		2EF31CD120B7431400514945 /* FarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarmViewController.swift; sourceTree = "<group>"; };
 		851F6CEBEEFE918CB6FA3C59 /* Pods-Agribusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agribusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Agribusiness/Pods-Agribusiness.debug.xcconfig"; sourceTree = "<group>"; };
 		B5E0D2AE28DDD7A417EBE210 /* libPods-Agribusiness.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agribusiness.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,6 +78,9 @@
 		2E722C6120B5F690000CDB78 /* Agribusiness */ = {
 			isa = PBXGroup;
 			children = (
+				2EF31CD020B7431400514945 /* Farm.swift */,
+				2EF31CCF20B7431400514945 /* FarmsTableViewController.swift */,
+				2EF31CD120B7431400514945 /* FarmViewController.swift */,
 				2E97D3BE20B6F14700D0A9F6 /* Farms.storyboard */,
 				2E97D3BC20B6F0B300D0A9F6 /* Map.storyboard */,
 				2E722C6220B5F690000CDB78 /* AppDelegate.swift */,
@@ -204,8 +213,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EF31CD220B7431500514945 /* FarmsTableViewController.swift in Sources */,
 				2E722C6520B5F690000CDB78 /* MapController.swift in Sources */,
+				2EF31CD420B7431500514945 /* FarmViewController.swift in Sources */,
 				2E722C6320B5F690000CDB78 /* AppDelegate.swift in Sources */,
+				2EF31CD320B7431500514945 /* Farm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M54MQ78CNB;
+				DEVELOPMENT_TEAM = GXTTXBDF5A;
 				INFOPLIST_FILE = Agribusiness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,7 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M54MQ78CNB;
+				DEVELOPMENT_TEAM = GXTTXBDF5A;
 				INFOPLIST_FILE = Agribusiness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
