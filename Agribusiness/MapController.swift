@@ -93,15 +93,15 @@ class MapController: UIViewController {
             
             DispatchQueue.main.async {
                 // now do something with the results, e.g. grab `formatted_address`:
-                for result in results {
-                    let geo = result["geometry"] as! [String:Any]
-                    let loc = geo["location"] as! [String:Double]
-                    let lat = loc["lat"] as! Double
-                    let lng = loc["lng"] as! Double
-                    
-                    let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-                    self.showMarker(position: coordinate, title: address, description: description, iconSrc: iconSrc)
-                }
+                let result = results.first!
+                
+                let geo = result["geometry"] as! [String:Any]
+                let loc = geo["location"] as! [String:Double]
+                let lat = loc["lat"] as! Double
+                let lng = loc["lng"] as! Double
+                
+                let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+                self.showMarker(position: coordinate, title: address, description: description, iconSrc: iconSrc)
 //
 //                for coordinate in coordinates {
 //                    self.showMarker(position: coordinate, title: address, description: description, iconSrc: iconSrc)

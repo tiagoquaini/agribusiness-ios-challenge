@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xWI-4F-Zft" kind="presentation" identifier="showDetails" id="YB7-in-8xK"/>
+                                    <segue destination="xWI-4F-Zft" kind="show" identifier="showDetails" id="YB7-in-8xK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -296,6 +296,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VcL-kK-xRz"/>
+        <segue reference="YB7-in-8xK"/>
     </inferredMetricsTieBreakers>
 </document>
