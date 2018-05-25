@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xWI-4F-Zft" kind="show" identifier="showDetails" id="YB7-in-8xK"/>
+                                    <segue destination="xWI-4F-Zft" kind="presentation" identifier="showDetails" id="YB7-in-8xK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,8 +73,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" textContentType="name"/>
                                                     <connections>
-                                                        <action selector="returnPressed:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="3JN-mr-lRg"/>
-                                                        <action selector="textChanged:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="kSe-En-XR2"/>
+                                                        <action selector="returnPressed:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="NoO-jH-irv"/>
+                                                        <action selector="textChanged:" destination="xWI-4F-Zft" eventType="editingChanged" id="B3L-Av-Em7"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -102,8 +102,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" textContentType="location"/>
                                                     <connections>
-                                                        <action selector="returnPressed:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="cyD-CG-Fo6"/>
-                                                        <action selector="textChanged:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="fR1-en-qh6"/>
+                                                        <action selector="addressEditBegin:" destination="xWI-4F-Zft" eventType="editingDidBegin" id="2sW-FE-XWo"/>
+                                                        <action selector="returnPressed:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="PZt-nq-VET"/>
+                                                        <action selector="textChanged:" destination="xWI-4F-Zft" eventType="editingChanged" id="Obl-bX-U6q"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -125,21 +126,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVj-dM-TIe">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MJt-qW-0Px">
                                                     <rect key="frame" x="4" y="6" width="406" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     <connections>
-                                                        <action selector="returnPressed:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="s3C-Z4-175"/>
-                                                        <action selector="textChanged:" destination="xWI-4F-Zft" eventType="editingChanged" id="TFp-Sb-95w"/>
+                                                        <action selector="returnPressed:" destination="xWI-4F-Zft" eventType="editingDidEnd" id="rPH-Oe-35J"/>
+                                                        <action selector="textChanged:" destination="xWI-4F-Zft" eventType="editingChanged" id="qwY-50-8LU"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="cVj-dM-TIe" secondAttribute="trailing" constant="4" id="3b8-fg-dfW"/>
-                                                <constraint firstItem="cVj-dM-TIe" firstAttribute="leading" secondItem="jbQ-Cd-NSQ" secondAttribute="leading" constant="4" id="7dl-ia-6YB"/>
-                                                <constraint firstItem="cVj-dM-TIe" firstAttribute="centerY" secondItem="jbQ-Cd-NSQ" secondAttribute="centerY" id="ZdQ-Af-1xQ"/>
+                                                <constraint firstItem="MJt-qW-0Px" firstAttribute="leading" secondItem="jbQ-Cd-NSQ" secondAttribute="leading" constant="4" id="FSN-ZN-4bN"/>
+                                                <constraint firstAttribute="trailing" secondItem="MJt-qW-0Px" secondAttribute="trailing" constant="4" id="GDi-Wh-O7D"/>
+                                                <constraint firstItem="MJt-qW-0Px" firstAttribute="centerY" secondItem="jbQ-Cd-NSQ" secondAttribute="centerY" id="tcI-0T-yXC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -247,7 +248,7 @@
                         <outlet property="addressTextField" destination="TZj-6F-TyU" id="N3R-VQ-dwG"/>
                         <outlet property="endDateLabel" destination="FUl-0g-sYk" id="6AY-pe-ueB"/>
                         <outlet property="endDatePicker" destination="ZLu-md-UKa" id="nDG-KT-DMs"/>
-                        <outlet property="milkBarrelsTextField" destination="cVj-dM-TIe" id="Ohp-mA-Gwi"/>
+                        <outlet property="milkBarrelsTextField" destination="MJt-qW-0Px" id="isn-Q5-OmJ"/>
                         <outlet property="nameTextField" destination="3sy-5C-jCR" id="58V-DD-p0E"/>
                         <outlet property="saveButton" destination="Oha-RD-dgk" id="m9b-yY-Ad8"/>
                         <outlet property="startDateLabel" destination="CJx-sZ-h1s" id="uCv-3d-DAT"/>
@@ -257,7 +258,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6e-cr-cbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="rBj-Xj-4lP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3639" y="453"/>
+            <point key="canvasLocation" x="3637.68115942029" y="452.44565217391306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="atY-yU-YaR">
@@ -295,6 +296,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YB7-in-8xK"/>
+        <segue reference="VcL-kK-xRz"/>
     </inferredMetricsTieBreakers>
 </document>

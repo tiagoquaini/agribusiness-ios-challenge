@@ -22,17 +22,20 @@ class MapController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        mapView.clear()
+        routeDisplayed = false
+        mapRouteButton.setImage(UIImage(named: "replay-icon.png"), for: .normal)
         loadFarms()
         let camera = GMSCameraPosition.camera(withLatitude: -29.7965353, longitude: -51.148414, zoom: 10.0)
         mapView.camera = camera
         showMarkers()
     }
     
+    
     @IBAction func mapRouteBtnPress(_ sender: UIButton) {
         var imageSrc :String
         if !routeDisplayed {
             fetchRoute()
-            showMarkers()
             imageSrc = "stop.png"
         } else {
             mapView.clear()
@@ -59,16 +62,67 @@ class MapController: UIViewController {
     }
 
     func showMarkerInAddress(address: String, description: String = "Description", isFactory: Bool = false) {
-        let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
-            guard let placemarks = placemarks, let location = placemarks.first?.location
-                else {
+        let iconSrc = isFactory ? "factory.png" : "cow.png"
+        
+        var baseUrl = URL(string: "https://maps.googleapis.com/maps/api/geocode/json")!
+        let query: [String: String] = [
+            "key": apiKey,
+            "address": address
+        ]
+        
+        let task = URLSession.shared.dataTask(with: baseUrl.withQueries(query)!) { data, response, error in
+            guard let data = data, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {
+                print(String(describing: response))
+                print(String(describing: error))
+                return
+            }
+            
+            guard let json = try! JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+                print("not JSON format expected")
+                print(String(data: data, encoding: .utf8) ?? "Not string?!?")
+                return
+            }
+            
+            guard let results = json["results"] as? [[String: Any]],
+                let status = json["status"] as? String,
+                status == "OK" else {
+                    print("no results")
+                    print(String(describing: json))
                     return
             }
-            let iconSrc = isFactory ? "factory.png" : "cow.png"
-            self.showMarker(position: location.coordinate, title: address, description: description, iconSrc: iconSrc)
-        })
+            
+            DispatchQueue.main.async {
+                // now do something with the results, e.g. grab `formatted_address`:
+                for result in results {
+                    let geo = result["geometry"] as! [String:Any]
+                    let loc = geo["location"] as! [String:Double]
+                    let lat = loc["lat"] as! Double
+                    let lng = loc["lng"] as! Double
+                    
+                    let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+                    self.showMarker(position: coordinate, title: address, description: description, iconSrc: iconSrc)
+                }
+//
+//                for coordinate in coordinates {
+//                    self.showMarker(position: coordinate, title: address, description: description, iconSrc: iconSrc)
+//                }
+                
+            }
+        }
+        task.resume()
+        
     }
+//    func showMarkerInAddress(address: String, description: String = "Description", isFactory: Bool = false) {
+//        let geoCoder = CLGeocoder()
+//        geoCoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
+//            guard let placemarks = placemarks, let location = placemarks.first?.location
+//                else {
+//                    return
+//            }
+//            let iconSrc = isFactory ? "factory.png" : "cow.png"
+//            self.showMarker(position: location.coordinate, title: address, description: description, iconSrc: iconSrc)
+//        })
+//    }
 
     func showMarker(position: CLLocationCoordinate2D, title: String, description snippet: String, iconSrc icon: String) {
         let marker = GMSMarker()
@@ -103,6 +157,7 @@ class MapController: UIViewController {
                         self.mapView!.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 30.0))
 
                         polyline.map = self.mapView
+                        self.showMarkers()
                     }
                 } catch let error as Error{
                     print("error:\(error)")
